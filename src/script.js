@@ -60,12 +60,13 @@ carForm.addEventListener("submit", (event) => {
 // Function to remove a car
 function removeCar(index) {
   const carId = cars[index].id;
+
   fetch(`/api/cars/${carId}`, {
     method: "DELETE",
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log("Success:", data);
+      console.log("Success:", index, cars[index], carId, data);
       //reload cars
       // const loadCarsBtn = document.getElementById('loadCarsBtn');
       loadCarsBtn.click();
