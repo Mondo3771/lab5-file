@@ -5,10 +5,8 @@
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
-      "methods": [
-        "get",
-        "post"
-      ]
+      "route": "cars/{id?}",
+      "methods": ["get", "put", "delete", "post"]
     },
     {
       "type": "http",
