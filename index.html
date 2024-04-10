@@ -6,12 +6,6 @@
     <title>Lucky-Lot Cars</title>
     <link rel="stylesheet" href="./style.css" />
     <script src="script.js" defer></script>
-    <script>
-      (async function () {
-        const { text } = await (await fetch(`/api/message`)).json();
-        console.log(text);
-      })();
-    </script>
   </head>
 
   <body>
@@ -36,6 +30,13 @@
           <button type="submit">Add Car</button>
         </form>
       </div>
+      <p>Loading content from the API: <b id="name">...</b></p>
+      <script>
+        (async function () {
+          const { text } = await (await fetch(`/api/message`)).json();
+          document.querySelector("#name").textContent = text;
+        })();
+      </script>
     </main>
     <footer>
       <p>&copy; 2024 Lucky-Lot Cars</p>
