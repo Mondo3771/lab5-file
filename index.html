@@ -33,7 +33,7 @@
       <p>Loading content from the API: <b id="name">...</b></p>
       <script>
         (async function () {
-          const { text } = await (await fetch(`/api/message`)).json();
+          const { text } = await (await fetch(`/api/m`)).json();
           document.querySelector("#name").textContent = text;
         })();
       </script>
